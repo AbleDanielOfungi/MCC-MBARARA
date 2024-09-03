@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCC League Table</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>MCC League Table</h1>
+    <table><thead>
+        <tr>
+            <th>Position</th>
+            <th>Team</th>
+            <th>MP</th> <!-- Matches Played -->
+            <th>W</th>  <!-- Wins -->
+            <th>D</th>  <!-- Draws -->
+            <th>L</th>  <!-- Losses -->
+            <th>GF</th> <!-- Goals For -->
+            <th>GA</th> <!-- Goals Against -->
+            <th>GD</th> <!-- Goal Difference -->
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in league_table %}
+        <tr>
+            <td>{{ row['position'] }}</td>
+            <td>{{ row['team_name'] }}</td>
+            <td>{{ row['matches_played'] }}</td>
+            <td>{{ row['wins'] }}</td>
+            <td>{{ row['draws'] }}</td>
+            <td>{{ row['losses'] }}</td>
+            <td>{{ row['goals_scored'] }}</td>
+            <td>{{ row['goals_conceded'] }}</td>
+            <td>{{ row['goal_difference'] }}</td>
+            <td>{{ row['points'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+                    
+    </table>
+    <a href="{{ url_for('add_result') }}">Add Match Result</a>
+</body>
+</html>

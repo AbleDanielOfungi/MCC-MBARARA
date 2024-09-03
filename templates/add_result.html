@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Match Result</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Add Match Result</h1>
+    <form method="post">
+        <label for="team1">Team 1:</label>
+        <input type="text" id="team1" name="team1" required><br>
+        <label for="score1">Team 1 Score:</label>
+        <input type="number" id="score1" name="score1" required><br>
+        <label for="team2">Team 2:</label>
+        <input type="text" id="team2" name="team2" required><br>
+        <label for="score2">Team 2 Score:</label>
+        <input type="number" id="score2" name="score2" required><br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to League Table</a>
+    <a href="{{ url_for('add_team') }}">Add New Team</a>
+
+</body>
+</html>
